@@ -1,0 +1,78 @@
+package com.ecomm.test;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.ecomm.dao.CategoryDAO;
+import com.ecomm.model.Category;
+
+public class CategoryDAOTest 
+{
+	static CategoryDAO categoryDAO;
+	
+	@BeforeClass
+	public static void initialize()
+	{
+		AnnotationConfigApplicationContext myContext=new AnnotationConfigApplicationContext();
+		myContext.scan("com.ecomm");
+		myContext.refresh();
+		
+		categoryDAO=(CategoryDAO)myContext.getBean("categoryDAO");
+	}
+	
+	@Ignore
+	@Test
+	public void addCategoryTest()
+	{
+		Category category=new Category();
+		category.setCategoryId(1008);
+		category.setCategoryName("Mobile-Vivio");
+		category.setCategoryDesc("Vivo 5G Mobiles");
+			
+		assertTrue("Problem in inserting Category",categoryDAO.addCategory(category));
+	}
+	
+	@Ignore
+	@Test
+	public void updateCategoryTest()
+	{
+		Category category=(Category)categoryDAO.getCategory(1008);
+		category.setCategoryDesc("Vivo");
+		System.out.println("Category ID:"+category.getCategoryId());
+		System.out.println("Category Name:"+category.getCategoryName());
+		System.out.println("Category Name:"+category.getCategoryDesc());
+		
+		assertTrue("Problem in updating Category",categoryDAO.updateCategory(category));
+	}
+	
+	//@Ignore //keeping only one @Test On to test and check the test cases
+	@Test
+	public void deleteCategoryTest()
+	{
+		System.out.println("Delete test code:");
+		//Only passing CategoryId here by using getCategory and CategoryDAO will delete it
+		Category category=(Category)categoryDAO.getCategory(2);		
+	
+		assertTrue("Problem in deleting Category",categoryDAO.deleteCategory(category));
+	}
+	
+	@Ignore
+	@Test
+	public void retrieveCategoriesTest()
+	{
+		List<Category> categoryList=(List<Category>)categoryDAO.retrieveCategories();
+		
+		assertTrue("Problem in Retrieving the Category List",categoryList.size()>0);
+		
+		for(Category category:categoryList)
+		{
+			System.out.println(category);
+		}
+	}
+}

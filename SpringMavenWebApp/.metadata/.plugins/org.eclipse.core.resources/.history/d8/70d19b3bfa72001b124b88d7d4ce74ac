@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html"%>
+<%@include file="CommonHeader.jsp" %>
+
+	<section>				
+		<form action="<c:url value='/viewCart/${product.id}'/>" method="post">
+			<input type="hidden" name="username" value="${sessionScope.username}" readonly/>		
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-4" style="margin:5%;text-align:center;">
+						<img src="<c:url value='/images/${product.productId}.jpg'/>" width="250px">
+					</div>	
+					<div class="col-sm-4" style="margin:5%;text-align:left;">
+						<table>
+							<tr>
+								<td></td>
+								<td><input type="hidden" name="productId" value="${product.productId}" readonly/></td>
+							</tr>
+							<tr>
+								<td>Product Name</td>
+								<td><input type="text" name="productName" style="border:none;" value="${product.productName}" readonly/></td>
+							</tr>
+							<tr>
+								<td>Product Description</td>
+								<td>${product.productDesc}</td>
+							</tr>
+							<tr>
+								<td>Price</td>
+								<td><input type="text" id="price" value="${product.productPrice}" readonly/></td>
+							</tr>
+							<tr>
+								<td>Quantity</td>
+								<td>
+								<select name="quantity" id="quantity" oninput="amount();" required>
+							<option value="" selected>Select</option>
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+						</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Total Amount</td>
+								<td><input type="text" id="total" name="totalAmount" oninput="amount();" readonly/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="hidden" id="date" name="dateTime" readonly></td>
+							</tr>
+							<tr>
+								<td>Paid</td>
+								<td><input type="text" name="paid" value="No" readonly/></td>
+							</tr>						
+						</table>
+						
+						<script type="text/javascript">
+						  document.getElementById('date').value = Date();
+						  
+						  function amount()
+						  {
+							  var price = document.getElementById("price").value;
+							  var price = parseInt(price, 10);
+							  var quantity = document.getElementById("quantity").value;
+							  var quantity = parseInt(quantity, 10);
+							  var total = price * quantity;
+							  document.getElementById("total").value = total;
+						  }
+						</script>
+						
+						<button type="submit" value="SUBMIT" style="margin:5% 0" class="btn btn-success">Add to Cart</button>
+					</div>
+				</div>
+			</form>		
+		</section>	
+
+<%@include file="/WEB-INF/jsp/CommonFooter.jsp"%>
+
+
+
+
+
+
+
+
+
+
+<!-- 	<section style="background:lightgrey;padding:10% 15%;">
+		<h3>Sorry!</h3><br>
+		<p>The page is under construction.</p>
+	</section> -->

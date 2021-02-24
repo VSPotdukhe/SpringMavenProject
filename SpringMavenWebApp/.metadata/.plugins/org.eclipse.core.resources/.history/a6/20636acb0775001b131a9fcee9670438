@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html"%>
+<%@include file="CommonHeader.jsp" %>
+
+		<section style="padding:5% 15%;">
+			<div class="container-fluid">
+				<div class="row">		
+					<c:forEach items="${productList}" var="product">
+						<%-- <form action="<c:url value='/productDisplay/${product.productId}'/>" method="post" align="left"> --%>
+							<div class="col-sm" style="margin:10% 0;">
+								<img src="<c:url value='./images/${product.productId}.jpg'/>" width="150px">
+								<h3>${product.productName}</h3><br>
+								<h5>${product.productDesc}</h5><br>								
+								<a href="<c:url value='/productDisplay/${product.productId}'/>" class="btn btn-warning"">View</a>
+							</div>
+						<!-- </form> -->
+					</c:forEach>
+				</div>
+			</div>
+		</section>
+
+<%@include file="/WEB-INF/jsp/CommonFooter.jsp"%>

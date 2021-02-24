@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Fashion King ${pagename}</title>
+<link rel="icon" href="<c:url value='images/bag-logo.jpg'/>" type="image/jpg" sizes="16x16">
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:MediumSlateBlue">
+		<a class="navbar-brand" href="index.jsp"> <img
+			src="<c:url value='images/bag-logo.jpg'/>" alt="bag logo"
+			style="height: 25px; width: 25px" />
+		</a>
+
+		<ul class="navbar-nav">
+			<c:if test="${sessionScope.role==null}">
+				<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="login">Login</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="register">Register</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="aboutus">About
+						Us</a></li>
+				<li class="nav-item"><a class="nav-link" href="contactus">Contact
+						Us</a></li>
+			</c:if>
+
+			<c:if test="${sessionScope.role!=null}">
+				<c:if test="${sessionScope.role=='ROLE_ADMIN'}">
+					<li class="nav-item"><a class="nav-link" href="adminpage">Admin Home</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="showCategory">Manage
+							Category</a></li>
+					<li class="nav-item"><a class="nav-link" href="contactus">Manage
+							Product</a></li>
+					<li class="nav-item"><a class="nav-link" href="contactus">Manage
+							Supplier</a></li>
+					<li class="nav-item"><a class="nav-link" href="perform_logout">Sign Out</a>
+					</li>
+				</c:if>
+				<c:if test="${sessionScope.role=='ROLE_USER'}">
+					<li class="nav-item"><a class="nav-link" href="userpage">User Home</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="products">Products</a>
+					</li>
+					<form action="perform_logout" method="post">
+					<li class="nav-item"><a class="nav-link" href="perform_logout">Sign Out</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="viewcart">Cart</a>
+					</li>
+					</form>
+				</c:if>
+			</c:if>
+		</ul>
+	</nav>
+
+	<nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-bottom">
+
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="login">Login</a>
+			</li>
+		</ul>
+	</nav>

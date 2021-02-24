@@ -1,0 +1,14 @@
+package com.ecomm.dao;
+
+import java.util.List;
+
+import com.ecomm.model.Order;
+
+public interface OrderDAO 
+{
+	public boolean addOrder(OrderDetail order);
+	public boolean deleteOrder(Order order);
+	public boolean updateOrder(Order order);
+	public Order getOrder(int orderId);
+	public List<Order> retrieveOrders();
+}

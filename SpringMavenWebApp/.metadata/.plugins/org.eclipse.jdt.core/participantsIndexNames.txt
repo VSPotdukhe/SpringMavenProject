@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+C:\Spring-Maven-S210120\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3268971942.index
+\FashionKingFrontend\src\main\java
+C:\Spring-Maven-S210120\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4234997950.index
+\FashionKing\src\main\java
+C:\Spring-Maven-S210120-version12\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3268971942.index
+\FashionKingFrontend\src\main\java
+C:\Spring-Maven-S210120-version12\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\206672025.index
+\FashionKingFrontend\src\main\java
+C:\Spring-Maven-S210120\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3246243241.index
+\FashionKingFrontend\src\main\java
+C:\Spring-Maven-S210120\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2080230419.index
+\FashionKingFrontend\src\main\java
+C:\Spring-Maven-S210120\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\206672025.index
+\FashionKingFrontend\src\main\resources

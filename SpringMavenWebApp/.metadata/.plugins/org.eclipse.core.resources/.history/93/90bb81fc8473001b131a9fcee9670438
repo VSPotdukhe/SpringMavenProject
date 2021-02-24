@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html"%>
+<%@include file="CommonHeader.jsp" %>
+
+	<section style="padding:0 15%;">
+
+
+			<div class="container" style="margin:0;">
+				<table class="table table-striped" align="center">
+					<thead>
+						<tr>
+							<th>Cart ID</th>
+							<th>User Name</th>
+							<th>Product ID</th>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Total Amount</th>
+							<th>Date Time</th>
+							<th>Paid</th>
+							<th>Remove from Cart</th>
+							<th>Confirm and Place Order</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${cartList}" var="cart">
+							<c:if test="${sessionScope.username ==cart.username }">
+								<tr>
+									<td>${cart.cartId}</td>
+									<td>${cart.username}</td>
+									<td>${cart.productId}</td>
+									<td>${cart.productName}</td>
+									<td>${cart.quantity}</td>
+									<td>${cart.totalAmount}</td>
+									<td>${cart.dateTime}</td>
+									<td>${cart.paid}</td>
+									<td><a href="<c:url value='/deleteCart/${cart.cartId}'/>" class="btn btn-danger">Remove from Cart</a></td>
+									<td><a href="<c:url value='/orderPlace/${cart.cartId}'/>" class="btn btn-danger">Place Order</a></td>
+								</tr>
+							</c:if>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+
+		
+	</section>
+
+	<section style="padding:10% 15%;">
+		<h3>Thank you ${username}!!!!</h3><br>
+		<p>Your order is placed successfully. Please keep cash ready on the day of delivery.</p>
+	</section>
+
+<%@include file="/WEB-INF/jsp/CommonFooter.jsp"%>

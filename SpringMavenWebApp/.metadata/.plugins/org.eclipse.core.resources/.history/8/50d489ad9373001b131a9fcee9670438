@@ -1,0 +1,26 @@
+package com.ecomm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ecomm.dao.OrderDAO;
+
+@Controller
+public class OrderController {
+
+	@Autowired
+	OrderDAO orderDAO;
+	
+	@RequestMapping(value="/orderPlace/{cartId}")
+	public String orderPlace(@PathVariable("cartId") int cartId,Model m)
+	{
+		System.out.println("I am in delete cart controller");
+		Cart cart=cartDAO.getCart(cartId);
+		cartDAO.deleteCart(cart);
+		return "OrderPlace";
+	}
+	
+}

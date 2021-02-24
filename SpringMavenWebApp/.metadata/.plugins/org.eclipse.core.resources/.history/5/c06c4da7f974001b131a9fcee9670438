@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html"%>
+<%@include file="CommonHeader.jsp" %>
+
+		<section style="background:lightgrey;padding:5% 10%;">
+			<div class="container">
+				<h3>Enter Product Details</h3>		
+				<form action="<c:url value='/insertProduct'/>" method="post" align="left">
+				    <table>
+				    	<tr>
+							<td>Product ID:</td>
+							<td><input type="text" name="productId"/></td>
+						</tr>
+						<tr>
+							<td>Product Name:</td>
+							<td><input type="text" name="productName"/></td>
+						</tr>
+						<tr>
+							<td>Product Description:</td>
+							<td><textarea rows="5" cols="22" name="productDesc"></textarea></td>
+						</tr>
+						<tr>
+							<td>Product Price:</td>
+							<td><input type="text" name="productPrice"/></td>
+						</tr>
+					</table>
+					<button type="submit" value="SUBMIT" class="btn btn-primary">Add</button>
+				</form>
+			</div>
+		</section>
+		
+		<div class="container" style="margin-bottom:20%;">
+			<table class="table table-striped" align="center">
+				<thead>
+					<tr>
+						<th>Product ID</th>
+						<th>Product Name</th>
+						<th>Product Desc</th>
+						<th>Product Price</th>
+						<th colspan='2'>Operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${productList}" var="product">
+						<tr>
+							<td>${product.productId}</td>
+							<td>${product.productName}</td>
+							<td>${product.productDesc}</td>
+							<td>${product.productPrice}</td>
+							<td><a href="<c:url value='/deleteProduct/${product.productId}'/>" class="btn btn-danger">Delete</a></td>
+							<td><a href="<c:url value='/editProduct/${product.productId}'/>" class="btn btn-warning">Edit</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+<%@include file="/WEB-INF/jsp/CommonFooter.jsp"%>

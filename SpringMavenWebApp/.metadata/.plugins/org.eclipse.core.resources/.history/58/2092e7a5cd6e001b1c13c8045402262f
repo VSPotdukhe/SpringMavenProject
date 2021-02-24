@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html"%>
+<%@include file="CommonHeader.jsp" %>
+	
+	<h2>FashionKing Customer Care</h2>
+	
+	For any query please feel free to contact us:
+	
+	Email: customercare@fashionking.com
+	
+	Telephone Number: +91 9876543210
+	
+	</body>
+</html>

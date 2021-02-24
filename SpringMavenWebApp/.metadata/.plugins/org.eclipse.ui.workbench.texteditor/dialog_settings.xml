@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="Cart"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="Cart"/>
+			<item value="cart"/>
+			<item value="input"/>
+			<item value="price"/>
+			<item value="Product"/>
+			<item value="product"/>
+			<item value="&lt;/td&gt;"/>
+			<item value="&lt;td&gt;"/>
+			<item value="Categories"/>
+			<item value="category"/>
+			<item value="Category"/>
+			<item value="categories"/>
+			<item value="&lt;div class=&quot;form-group&quot;&gt;"/>
+			<item value="&lt;/label&gt;"/>
+			<item value="&lt;label for=&quot;text&quot;&gt;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="Cart"/>
+			<item value="cart"/>
+			<item value="&lt;br&gt;"/>
+			<item value=" "/>
+			<item value="supplier"/>
+			<item value="Supplier"/>
+			<item value="Suppliers"/>
+			<item value="product"/>
+			<item value="Product"/>
+			<item value="Products"/>
+			<item value="&lt;tr&gt;"/>
+			<item value="&lt;/td&gt;"/>
+			<item value="&lt;td&gt;"/>
+			<item value="&quot;&gt;"/>
+			<item value="&quot;p"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1210"/>
+		<item key="DIALOG_Y_ORIGIN" value="440"/>
+		<item key="DIALOG_WIDTH" value="336"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

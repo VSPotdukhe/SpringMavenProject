@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Feb 25 00:27:45 IST 2021
+org.eclipse.jst.j2ee.server\:FashionKing=WEB-INF/lib/FashionKing-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\VSP\\.m2\\repository\\org\\springframework\\spring-web\\5.2.4.RELEASE\\spring-web-5.2.4.RELEASE.jar=WEB-INF/lib/spring-web-5.2.4.RELEASE.jar

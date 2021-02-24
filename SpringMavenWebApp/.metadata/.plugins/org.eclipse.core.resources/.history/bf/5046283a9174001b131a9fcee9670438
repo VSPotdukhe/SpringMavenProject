@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html"%>
+<%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
+<%@include file="CommonHeader.jsp" %>
+
+	<section style="padding:10% 15%;">
+		<h3>Thank you ${username}!!!!</h3><br>
+		<p>Your order is placed successfully. Please keep cash ready on the day of delivery.</p>
+	</section>
+
+	<section style="padding:0 15%;">
+			<div class="container" style="margin:0;">
+				<table class="table table-striped" align="center">
+					<thead>
+						<tr>
+							<td>Order ID</td>
+							<td>Product Name</td>
+							<td>Quantity</td>
+							<td>Total Amount</td>
+							<td>Order DateTime</td>
+							<td>Paid</td>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${orderList}" var="order">
+							<c:if test="${sessionScope.username == order.username }">
+								<tr>
+									<td>${order.orderId}</td>
+									<td>${order.productName}</td>
+									<td>${order.quantity}</td>
+									<td>${order.totalAmount}</td>
+									<td>${order.orderDate}</td>
+									<td>${order.paid}</td>
+								</tr>
+							</c:if>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>		
+	</section>
+
+<%@include file="/WEB-INF/jsp/CommonFooter.jsp"%>
